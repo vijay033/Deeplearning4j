@@ -18,8 +18,9 @@ MainActivity.java
 /WordVectorReader.java
 /WordVectorSaver.java
 /WordVectorTraining.java
+# Storage Permission
+Manually Enable Permission from App Settings For the First Time or Handle it from code.
 # Running word2vec algorithm on mobile getting ANR in Base64 library due to java and android compatibility
 # WordVectorReader and WordVectorSaver, overrides the funtion of library in order to solve the dependencies
 # Tried to solve encodeBase64/decodeBase64 compatibility issue between android and jave: auth0/java-jwt#131
-
 # Data Set Source : http://www.gutenberg.org/

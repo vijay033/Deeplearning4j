@@ -1,4 +1,4 @@
-# Deeplearning4j = OnDevice (Mobile) Word2Vec Training
+# Deeplearning4j - OnDevice (Mobile) Word2Vec Training 
 # Word2Vec Porting On Android Using DeepLearning4j
 # Model training takes place on mobile and creates a word2vec model. 
 # Once training is done - word2vec.wordnearestsum returns nearest trained wordvector.

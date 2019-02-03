@@ -30,7 +30,7 @@ Manually delete trained dataset for including new training data or go for uptrai
 #ISSUE DISCUSSION
 https://gitter.im/deeplearning4j/deeplearning4j/archives/2016/09/06  
 
-#ISSUE 1
+#ISSUE_1
 java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or WeightLookupTable
         at org.deeplearning4j.models.sequencevectors.SequenceVectors.fit(SequenceVectors.java:238)
         at com.example.vijay.ondevice_word2vector.WordVectorTraining.trainW2V(WordVectorTraining.java:174)
@@ -49,7 +49,7 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 #IDEA 
 
 (a) The whole idea is to train word2vec on device (mobile), mentioned issue above may not appear for high end mobile devices.
-(b) Code successfully run for below training configuration and "vector_data1.txt"
+(b) Code successfully run for training configuration in code and vector_data1.txt"
 
                 word2Vec[i] = new Word2Vec.Builder()
                         .minWordFrequency(10)  /*observation  : This has major role to play for mentioned ISSUE*/
@@ -57,13 +57,15 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .layerSize(100)
                         .seed(42)
                         .windowSize(5)
-                        .epochs(1)  /*observation  : commenting this word2vec result was not coming*/
-//                        .batchSize(10)
-//                        .stopWords(stopwords) /*observation  : These worked for high end mobile devices*/
-//                        .stopWords(extendedStopwords) /*observation  : These worked for high end mobile devices*/
+                        .epochs(1)  /*observation  : It will take more time in training. commenting this w2v not obtained properly*/
+                        .batchSize(10) /*Commented*/
+                        .stopWords(stopwords) /*observation  : These worked for high end mobile devices*/
+                        .stopWords(extendedStopwords) /*observation  : These worked for high end mobile devices*/
                         .iterate(iterator)
                         .tokenizerFactory(tokenizerFactory)
-//                        .lookupTable(table)
-//                        .vocabCache(cache)
+                        .lookupTable(table) /*Commented*/
+                        .vocabCache(cache) /*Commented*/
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
+			
+(c) With the current vector_data1.txt, desired result is not obtained. Increasing the data ANR occurs as mentioned in Issue.

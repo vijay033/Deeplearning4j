@@ -41,7 +41,7 @@ public class WordVectorTraining {
     private final List<String> extendedStopwords = new ArrayList<String>();
 
     private InputStream [] in_vectorStream ;
-    private File[]datafile;
+    private static File[]datafile;
     private Word2Vec []word2Vec = null;
     private static String []VectorModelFile = {"vector_data1.txt" ,
 //                                                "vector_data2.txt" ,
@@ -135,13 +135,11 @@ public class WordVectorTraining {
         TokenizerFactory tokenizerFactory = null;
         VocabCache<VocabWord> cache = null;
         WeightLookupTable<VocabWord> table = null;
+        word2Vec  = new Word2Vec[in_vectorStream.length];
 
         if(wordVectorSaver.getSavedModelState() == false){
 
-//            new Thread(mMessageSender).start();
-
-            word2Vec  = new Word2Vec[in_vectorStream.length];
-
+            new Thread(mMessageSender).start();
             for(int i = 0 ; i < in_vectorStream.length ; i++) { /*Train model iteratively with dataset[]*/
 
                 iterator = new BasicLineIterator(in_vectorStream[i]);

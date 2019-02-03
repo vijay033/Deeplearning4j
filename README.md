@@ -37,7 +37,7 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
         at com.example.vijay.ondevice_word2vector.MainActivity$1.run(MainActivity.java:50)
         at java.lang.Thread.run(Thread.java:764)
 		
-# ISSUE 2		
+# ISSUE_2		
 2019-02-02 21:17:14.890 30303-30303/? A/DEBUG: pid: 30179, tid: 30284, name: VectorCalculati  
 >>> com.example.vijay.ondevice_word2vector <<<
 2019-02-02 21:17:14.890 30303-30303/? A/DEBUG: signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0

@@ -71,4 +71,4 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 			
 (c) With the current vector_data1.txt, desired result is not obtained. Increasing the data causing ANR as mentioned in Issue.
 (d) Tune the parameters, try with various mobile devices, clear the caches, free RAM usage during training etc. for obtaining the desired result.
-(e) Doing training ondevice can help secure user privacy.
+(e) Doing training ondevice can help in securing user privacy.

@@ -24,7 +24,7 @@ Manually Enable Permission from App Settings For the First Time or Handle it fro
 Manually delete trained dataset for including new training data or go for uptraining process.
 # Running word2vec algorithm on mobile getting ANR in Base64 library due to java and android compatibility
 # WordVectorReader and WordVectorSaver, overrides the funtion of library in order to solve the dependencies
-# Tried to solve encodeBase64/decodeBase64 compatibility issue between android and jave: auth0/java-jwt#131
+# Tried to solve encodeBase64/decodeBase64 compatibility issue between android and java: https://github.com/auth0/java-jwt/issues/131
 # Data Set Source : http://www.gutenberg.org/
 
 # ISSUE DISCUSSION
@@ -51,6 +51,9 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 
 (a) The whole idea is to train word2vec on device (mobile), mentioned issue above may not appear for high end mobile devices.
 (b) Code successfully run for training configuration in code and vector_data1.txt"
+(c) With the current vector_data1.txt, desired result is not obtained. Increasing the data causing ANR as mentioned in Issue.
+(d) Tune the parameters, try with various mobile devices, clear the caches, free RAM usage during training etc. for obtaining the desired result.
+(e) Doing training ondevice can help in securing user privacy.
 
                 word2Vec[i] = new Word2Vec.Builder()
                         .minWordFrequency(10)  /*observation  : This has major role to play for mentioned ISSUE*/
@@ -69,6 +72,4 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
 			
-(c) With the current vector_data1.txt, desired result is not obtained. Increasing the data causing ANR as mentioned in Issue.
-(d) Tune the parameters, try with various mobile devices, clear the caches, free RAM usage during training etc. for obtaining the desired result.
-(e) Doing training ondevice can help in securing user privacy.
+

@@ -44,11 +44,11 @@ public class WordVectorTraining {
     private File[]datafile;
     private Word2Vec []word2Vec = null;
     private static String []VectorModelFile = {"vector_data1.txt" ,
-                                                "vector_data2.txt" ,
-                                                "vector_data3.txt",
-                                                "vector_data4.txt",
-                                                "vector_data5.txt",
-                                                "vector_data6.txt"
+//                                                "vector_data2.txt" ,
+//                                                "vector_data3.txt",
+//                                                "vector_data4.txt",
+//                                                "vector_data5.txt",
+//                                                "vector_data6.txt"
     };
 
     private static final String MSG_KEY = "training";
@@ -131,9 +131,13 @@ public class WordVectorTraining {
     };
     
     public void trainW2V(){
-        
+        SentenceIterator iterator = null;
+        TokenizerFactory tokenizerFactory = null;
+        VocabCache<VocabWord> cache = null;
+        WeightLookupTable<VocabWord> table = null;
+
         if(wordVectorSaver.getSavedModelState() == false){
-            SentenceIterator iterator = null;
+
 //            new Thread(mMessageSender).start();
 
             word2Vec  = new Word2Vec[in_vectorStream.length];
@@ -141,29 +145,28 @@ public class WordVectorTraining {
             for(int i = 0 ; i < in_vectorStream.length ; i++) { /*Train model iteratively with dataset[]*/
 
                 iterator = new BasicLineIterator(in_vectorStream[i]);
-
-                TokenizerFactory tokenizerFactory = new DefaultTokenizerFactory();
+                tokenizerFactory = new DefaultTokenizerFactory();
                 tokenizerFactory.setTokenPreProcessor(new CommonPreprocessor());
                 Log.d(TAG, "Building Model");
 
                 // manual creation of VocabCache and WeightLookupTable usually isn't necessary
                 // but in this case we'll need them
-//                VocabCache<VocabWord> cache = new AbstractCache<>();
-//                WeightLookupTable<VocabWord> table = new InMemoryLookupTable.Builder<VocabWord>()
+//                cache = new AbstractCache<>();
+//                table = new InMemoryLookupTable.Builder<VocabWord>()
 //                        .vectorLength(100)
 //                        .useAdaGrad(false)
 //                        .cache(cache).build();
 
                 word2Vec[i] = new Word2Vec.Builder()
-                        .minWordFrequency(5)
+                        .minWordFrequency(10)
                         .iterations(1)
                         .layerSize(100)
                         .seed(42)
                         .windowSize(5)
                         .epochs(1)
 //                        .batchSize(10)
-                        .stopWords(stopwords)
-                        .stopWords(extendedStopwords)
+//                        .stopWords(stopwords)
+//                        .stopWords(extendedStopwords)
                         .iterate(iterator)
                         .tokenizerFactory(tokenizerFactory)
 //                        .lookupTable(table)
@@ -177,8 +180,17 @@ public class WordVectorTraining {
             }
             wordVectorSaver.setSharedpreferences();
         }else{ /*Only read model */
-            for(int i = 0 ; i < datafile.length ; i++)
+            for(int i = 0 ; i < datafile.length ; i++){
+
                 word2Vec[i] = wordVectorReader.readWord2VecModel(datafile[i]);
+
+                /*Uptraining Process*/
+//                iterator = new BasicLineIterator(in_vectorStream[i]);
+//                tokenizerFactory = new DefaultTokenizerFactory();
+//                tokenizerFactory.setTokenPreProcessor(new CommonPreprocessor());
+//                word2Vec[i].setTokenizerFactory(tokenizerFactory);
+//                word2Vec[i].setSentenceIterator(iterator);
+            }
         }
     }
 

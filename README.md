@@ -77,3 +77,4 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .vocabCache(cache) /*Commented*/
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
+![alt text] (../master/Deeplearning4j/Screenshot_20190203-131421_OnDevice_Word2Vector.jpg)

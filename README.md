@@ -61,7 +61,7 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .layerSize(100)
                         .seed(42)
                         .windowSize(5)
-                        .epochs(1)  /*observation  : It will take more time in training. commenting this w2v not obtained properly*/
+                        .epochs(1)  /*observation  : It will take more time in training*/
                         .batchSize(10) /*Commented*/
                         .stopWords(stopwords) /*observation  : These worked for high end mobile devices*/
                         .stopWords(extendedStopwords) /*observation  : These worked for high end mobile devices*/
@@ -72,4 +72,4 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
 			
-
+# CHOOSE HIGH END DEVICE FOR RUNNING THE CODE

@@ -59,7 +59,7 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 (e) Doing training ondevice can help in securing user privacy.
 
 # Below code will work in high end device
-# Change or modify /asset/vector_data[*],txt for domain specific word2vec 
+# Change or modify /asset/vector_data[*].txt for domain specific word2vec 
 # Tune hyper parameters for best result
                 word2Vec[i] = new Word2Vec.Builder()
                         .minWordFrequency(10)  /*observation  : This has major role to play for mentioned ISSUE*/

@@ -2,6 +2,7 @@
 # Word2Vec Porting On Android Using DeepLearning4j
 # Model training takes place on mobile and creates a word2vec model. 
 # Once training is done - word2vec.wordnearestsum returns nearest trained wordvector.
+# CHOOSE HIGH END DEVICE FOR RUNNING THE CODE - [ Tested Device - Samsung Galaxy S7 ]
 # File Folders
 # assets/
 /vector_data1.txt
@@ -26,6 +27,8 @@ Manually delete trained dataset for including new training data or go for uptrai
 # WordVectorReader and WordVectorSaver, overrides the funtion of library in order to solve the dependencies
 # Tried to solve encodeBase64/decodeBase64 compatibility issue between android and java: https://github.com/auth0/java-jwt/issues/131
 # Data Set Source : http://www.gutenberg.org/
+
+# If you see below issue try with high end devices
 
 # ISSUE DISCUSSION
 https://gitter.im/deeplearning4j/deeplearning4j/archives/2016/09/06  
@@ -71,5 +74,3 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .vocabCache(cache) /*Commented*/
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
-			
-# CHOOSE HIGH END DEVICE FOR RUNNING THE CODE

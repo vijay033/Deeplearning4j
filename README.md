@@ -58,6 +58,9 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 (d) Tune the parameters, try with various mobile devices, clear the caches, free RAM usage during training etc. for obtaining the desired result.
 (e) Doing training ondevice can help in securing user privacy.
 
+# Below code will work in high end device
+# Change or modify /asset/vector_data[*],txt for domain specific word2vec 
+# Tune hyper parameters for best result
                 word2Vec[i] = new Word2Vec.Builder()
                         .minWordFrequency(10)  /*observation  : This has major role to play for mentioned ISSUE*/
                         .iterations(1)

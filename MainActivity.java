@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             ArrayList<String> lst = (ArrayList<String>)vec[i].wordsNearest(edString,5);
                             for(int j = 0; j < lst.size(); j++){
                                 tvdisplay += '#';
-                                tvdisplay += lst.get(i);
+                                tvdisplay += lst.get(j);
                             }
                             tvSimilarwords.setText(tvdisplay);
                         }

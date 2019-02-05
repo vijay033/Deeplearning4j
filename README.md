@@ -22,7 +22,7 @@ MainActivity.java
 /WordVectorTraining.java
 # Storage Permission
 Manually Enable Permission from App Settings For the First Time or Handle it from code.
-# Delete W2V_DATAPATH
+# Delete W2V_DATAPATH/data for training the model from the beginning.
 Manually delete trained dataset for including new training data or go for uptraining process.
 # Running word2vec algorithm on mobile getting ANR in Base64 library due to java and android compatibility
 # WordVectorReader and WordVectorSaver, overrides the funtion of library in order to solve the dependencies

@@ -51,7 +51,7 @@ public class WordVectorTraining {
 //                                                "vector_data6.txt"
 //     };
 
-    /*Keep this in W2V_DATAPATH for direct reading the files - worked for Galaxy S7 device*/
+    /*Keep this model in W2V_DATAPATH for direct reading the files - worked for Galaxy S7 device*/
     private static String []VectorModelFile = {"glove.6B.50d"};
     
     private static final String MSG_KEY = "training";
@@ -167,9 +167,9 @@ public class WordVectorTraining {
                         .seed(42)
                         .windowSize(5)
                         .epochs(1)
-//                        .batchSize(10)
-//                        .stopWords(stopwords)
-//                        .stopWords(extendedStopwords)
+                       .batchSize(10)
+                       .stopWords(stopwords)
+                       .stopWords(extendedStopwords)
                         .iterate(iterator)
                         .tokenizerFactory(tokenizerFactory)
 //                        .lookupTable(table)

@@ -99,20 +99,13 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 # device : galaxy s7 and above hardware configuration
 # DATA_PATH = Read Exisiting word to vec model - keep "glove.6B.50d" file @W2V_DATAPATH
    private static String []VectorModelFile = {"glove.6B.50d"};
-# Modify code   
-   
-   if(status){
-            
-	    wordVectorSaver.resetSharedpreferences();    
-        
-	}
-	
-	else{
-	
-	/*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
-            
-	    wordVectorSaver.setSharedpreferences();
-        
-	}
+# Modify code   :
+   if(status)
+   {
+    wordVectorSaver.resetSharedpreferences();        
+   }		
+   else{ /*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
+     wordVectorSaver.setSharedpreferences();
+   }
 # OnDevice Sentiment Analysis :
 https://github.com/vijay033/OnDevice_Sentiment-Analysis

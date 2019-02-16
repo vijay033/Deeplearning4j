@@ -43,17 +43,18 @@ public class WordVectorTraining {
     private InputStream [] in_vectorStream ;
     private static File[]datafile;
     private Word2Vec []word2Vec = null;
-//     private static String []VectorModelFile = {"vector_data1.txt" ,
-//                                                "vector_data2.txt" ,
-//                                                "vector_data3.txt",
-//                                                "vector_data4.txt",
-//                                                "vector_data5.txt",
-//                                                "vector_data6.txt"
-//     };
 
-    /*Keep this model in W2V_DATAPATH for direct reading the files - worked for Galaxy S7 device*/
-    private static String []VectorModelFile = {"glove.6B.50d"};
-    
+    /*Train all these files iteratively*/
+    private static String []VectorModelFile = {"vector_data1.txt" ,
+                                                "vector_data2.txt" ,
+                                                "vector_data3.txt",
+                                                "vector_data4.txt",
+                                                "vector_data5.txt",
+                                                "vector_data6.txt"
+    };
+/*Read Exisiting word to vec model - keep this file @W2V_DATAPATH*/
+//    private static String []VectorModelFile = {"glove.6B.50d"};
+
     private static final String MSG_KEY = "training";
 
     public WordVectorTraining(Context context) throws IOException {
@@ -95,8 +96,8 @@ public class WordVectorTraining {
         }
         if(status){
             wordVectorSaver.resetSharedpreferences();
-        }else{
-            wordVectorSaver.setSharedpreferences(); //Add this for direct reading of glove.6B.50d
+        }else{/*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
+            wordVectorSaver.setSharedpreferences();
         }
 
         /*Load Stopwords*/
@@ -167,9 +168,9 @@ public class WordVectorTraining {
                         .seed(42)
                         .windowSize(5)
                         .epochs(1)
-                       .batchSize(10)
-                       .stopWords(stopwords)
-                       .stopWords(extendedStopwords)
+//                        .batchSize(10)
+//                        .stopWords(stopwords)
+//                        .stopWords(extendedStopwords)
                         .iterate(iterator)
                         .tokenizerFactory(tokenizerFactory)
 //                        .lookupTable(table)

@@ -6,20 +6,35 @@
 
 # File Folders
 # assets/
-/vector_data1.txt
-/vector_data2.txt
-/vector_data3.txt
-/vector_data4.txt
+
+vector_data1.txt
+
+vector_data2.txt
+
+vector_data3.txt
+
+vector_data4.txt
+
 # raw/
+
 stopwords.txt
-/extended_stopwords.txt
+
+extended_stopwords.txt
+
 # layout/
+
 activity_main.xml
+
 # main/java/
+
 MainActivity.java
-/WordVectorReader.java
-/WordVectorSaver.java
-/WordVectorTraining.java
+
+WordVectorReader.java
+
+WordVectorSaver.java
+
+WordVectorTraining.java
+
 # Storage Permission
 Manually Enable Permission from App Settings For the First Time or Handle it from code.
 # Delete W2V_DATAPATH/data for training the model from the beginning.

@@ -90,3 +90,5 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
         }else{/*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
             wordVectorSaver.setSharedpreferences();
         }
+# OnDevice Sentiment Analysis :
+https://github.com/vijay033/OnDevice_Sentiment-Analysis

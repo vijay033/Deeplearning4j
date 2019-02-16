@@ -80,3 +80,13 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .vocabCache(cache) /*Commented*/
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
+# Read Existing Word2Vec Model : glove.6B.50d ( 163MB) 
+# device : galaxy s7 and above hardware configuration
+# DATA_PATH = /*Read Exisiting word to vec model - keep this file @W2V_DATAPATH*/
+   private static String []VectorModelFile = {"glove.6B.50d"};
+# Modify code   
+   if(status){
+            wordVectorSaver.resetSharedpreferences();
+        }else{/*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
+            wordVectorSaver.setSharedpreferences();
+        }

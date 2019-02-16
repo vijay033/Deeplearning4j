@@ -139,10 +139,11 @@ public class WordVectorTraining {
     public void trainW2V(){
         SentenceIterator iterator = null;
         TokenizerFactory tokenizerFactory = null;
-        VocabCache<VocabWord> cache = null;
-        WeightLookupTable<VocabWord> table = null;
         word2Vec  = new Word2Vec[in_vectorStream.length];
 
+//         VocabCache<VocabWord> cache = null;
+//         WeightLookupTable<VocabWord> table = null;
+        
         if(wordVectorSaver.getSavedModelState() == false){
 
             new Thread(mMessageSender).start();
@@ -168,9 +169,9 @@ public class WordVectorTraining {
                         .seed(42)
                         .windowSize(5)
                         .epochs(1)
-//                        .batchSize(10)
-//                        .stopWords(stopwords)
-//                        .stopWords(extendedStopwords)
+                       .batchSize(10)
+                       .stopWords(stopwords)
+                       .stopWords(extendedStopwords)
                         .iterate(iterator)
                         .tokenizerFactory(tokenizerFactory)
 //                        .lookupTable(table)

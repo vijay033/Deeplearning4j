@@ -96,25 +96,8 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
                         .elementsLearningAlgorithm(new SkipGram<VocabWord>())
                         .build();
 # Read Existing Word2Vec Model : glove.6B.50d ( 163MB) 
-# device : galaxy s7 and above hardware configuration
+# device : galaxy s7 and above hardware configuration (4GB RAM)
 # DATA_PATH = Read Exisiting word to vec model - keep "glove.6B.50d" file @W2V_DATAPATH
-   private static String []VectorModelFile = {"glove.6B.50d"};
-# Modify code   :
-   
-   if(status)
-   {
-   
-    wordVectorSaver.resetSharedpreferences();        
-   
-   }		
-   
-   else
-   { 
-   
-   /*Read Exisiting word to vec model - kept @W2V_DATAPATH*/
-   
-   wordVectorSaver.setSharedpreferences();
-   
-   }
+# Reading existing model can be done on (2GB RAM) devices but training cannot be done.
 # OnDevice Sentiment Analysis :
 https://github.com/vijay033/OnDevice_Sentiment-Analysis

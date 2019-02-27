@@ -98,6 +98,6 @@ java.lang.IllegalStateException: You can't fit() model with empty Vocabulary or 
 # Read Existing Word2Vec Model : glove.6B.50d ( 163MB) 
 # device : galaxy s7 and above hardware configuration (4GB RAM)
 # DATA_PATH = Read Exisiting word to vec model - keep "glove.6B.50d" file @W2V_DATAPATH
-# Reading existing model can be done on (2GB RAM) devices but training cannot be done.
+# Reading existing model can be done on (2GB RAM) devices but training cannot be done. Once model can be trained on high end and model can be transferred to low end for reading. Totally depends on use cases.
 # OnDevice Sentiment Analysis :
 https://github.com/vijay033/OnDevice_Sentiment-Analysis
